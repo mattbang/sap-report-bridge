@@ -1,66 +1,45 @@
----
-type: project_mgmt
-date: 2026-09-08
-tags: [portfolio, sap, automation, business-intelligence]
-status: active
----
+# SAP Reporting Automation
 
-![SAP Report Bridge — Interactive automation for inventory and month-end reporting.](assets/portfolio-banner.png)
+**Reduced a recurring reporting task from about two hours to seconds—and supported its handover to a colleague.**
 
-# SAP Report Bridge
+I built Python desktop automation to extract and organise SAP reports when standard reporting feeds did not provide the required detail. Historical extraction supported reporting across **eight countries**; my work also covered launch instructions, scheduling support and troubleshooting for another operator.
 
-**Turning hard-to-access SAP reports into repeatable inputs for management reporting.**
+[Website case study](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/work/sap-report-bridge) · [Handover evidence](docs/HANDOVER.md) · [Architecture](docs/ARCHITECTURE.md)
 
-I built SAP desktop automation to close gaps in the data available through conventional BI connectors. The work supported custom month-end balance reporting across **8 countries** and reused the same early foundation for **consignment stock exports**.
+![Conceptual flow from SAP reports through desktop automation to organised reporting inputs](assets/solution-flow.png)
 
-| Focus | Business process automation · BI enablement · Reporting integration |
-| :--- | :--- |
-| **Technical foundation** | Python · pywinauto · Windows UI automation |
-| **Downstream data stack** | pandas · CSV consolidation · Qlik |
-| **Business users** | Country finance and regional management reporting teams |
+*Documentation case study with conceptual visuals. The timing is my estimate from the original manual and automated workflows; it is not a public-demo benchmark.*
 
-## The problem I solved
+## From personal automation to colleague use
 
-The reporting team needed custom balances and customer-level detail that existing BI connectors did not expose. Local reporting dates and inclusion rules varied by country. Preparing PPO month-end balances meant maintaining a difficult Excel workbook, copying formulas as values and filtering unwanted items by hand.
+Automating report navigation, parameter entry, exports and filing replaced repeated manual preparation. Just as importantly, I helped another person run the workflow through launcher and batch-file guidance, scheduled-run checks and follow-up on outputs and logging.
 
-Headless SAP access was unavailable under the existing user permissions. I used the interactive desktop route to make the required reports available for recurring and historical analysis.
+The retained evidence includes a colleague's successful run report and subsequent launcher and scheduling support. A failure report also records a practical lesson: inspect errors and outputs rather than treating a completion message as proof that every report is complete. The [handover brief](docs/HANDOVER.md) separates dated evidence from a new reusable operating checklist.
 
-## My contribution
+## Why this approach was needed
 
-- **Built the SAP acquisition workflow:** coordinated application windows, report parameters, export dialogs and output files.
-- **Automated monthly filing:** created the correct year/month folders within the business's established structure.
-- **Extended PPO for reporting continuity:** added historical batch extraction, download-completion checks, retries, and current/prior/year-opening balance-file coverage.
-- **Reused the early foundation for consignment stock:** adapted report navigation and export handling to a second business need.
+Country finance and regional management needed customer detail and reporting periods that standard business-intelligence connectors did not expose. The available route was an interactive SAP desktop session. Month-end pending-order balance reporting also involved country-specific dates and current, prior-period and opening balances.
 
-![SAP report inputs flow through interactive automation, organized exports and reporting preparation.](assets/solution-flow.png)
+I used **Python and pywinauto** to coordinate windows, report parameters and export dialogs, organised outputs by reporting period, and reused the early approach for consignment stock exports.
 
-## Business impact
+## Decisions behind the automation
 
-| Outcome | Value to the business |
-| :--- | :--- |
-| **Historical extraction across 8 countries** | Provided the foundation for a monthly balance database used in BI dashboards. |
-| **Locally relevant reporting inputs** | Enabled country and regional management reports to include adjustments absent from standard connector feeds. |
-| **Repeatable monthly acquisition** | Reduced manual downloading and filing; checked the periods needed for current reporting. |
-| **Reuse across report types** | Applied the early approach to consignment stock and identified further use for granular customer sales history. |
+**Work within the available access.** Use the authorised interactive session and design around its limitations.
 
-Supporting Python/pandas code consolidates localized exports and preserves source-file and period metadata. A Qlik load script supplies the downstream consumption path.
+**Start with the reporting need.** A successful download is not enough if the wrong period or required opening balance is missing.
 
-## Engineering judgment
+**Make exceptions actionable.** Preserve failure information, identify affected outputs and help the operator recover without passing incomplete inputs into reporting.
 
-**Work within real access constraints.** Use the available interactive session and handle the window states it exposes.
+**Reuse selectively.** Different SAP reports need different navigation, parameters and completion checks.
 
-**Design around reporting needs.** A new download alone is insufficient when reporting also depends on prior-period and year-opening balances.
+## Inspect the case
 
-**Reuse the approach, adapt the details.** Each SAP report needs its own parameters, navigation sequence, output format and checks.
+This is a documentation and visual case study. Original operational scripts, logs and employer data are excluded. The surviving consignment source was inspected privately; the original extended pending-order macro is unavailable, so its advanced historical extraction and recovery behaviour is described from my project experience.
 
-## Two applications, one project
+- [Architecture and evidence](docs/ARCHITECTURE.md): observed implementation and reconstructed extensions.
+- [Handover guide](docs/HANDOVER.md): colleague use, support and operating guidance.
+- [Visual overview](preview.html): download the repository and open locally; GitHub does not execute the HTML preview.
 
-![The early PPO foundation was adapted for consignment stock and extended for month-end reporting.](assets/project-evolution.png)
+The evidence supports a faster recurring process and use beyond its author. It does not establish an uptime rate or an exact runtime for every export.
 
-The surviving **consignment implementation** demonstrates Python/pywinauto navigation, organization loops, monthly folders, save-dialog handling and file-presence/recency checks. The extended **PPO case** demonstrates the additional historical and recurring-reporting controls described above.
-
-**Portfolio scope:** the consignment source was inspected; the original PPO macro is unavailable, so advanced PPO behavior and business outcomes are documented from my project experience. The retained archive contains 84 monthly export files across eight sales organizations. This is a historical footprint, not a completeness audit or a measured time-saving claim. This showcase contains documentation and visuals; operational source and company data are excluded.
-
-## See Also
-
-[Architecture, flowcharts and implementation evidence](docs/ARCHITECTURE.md) · [Visual overview — download and open locally](preview.html) · [[ARCHITECTURE]]
+[Matthew Bangle on LinkedIn](https://www.linkedin.com/in/matthew-bangle/) · [Full portfolio](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/work)

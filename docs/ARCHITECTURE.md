@@ -1,10 +1,3 @@
----
-type: technical_doc
-date: 2026-09-08
-tags: [portfolio, sap, automation, architecture]
-status: active
----
-
 # Architecture & implementation evidence
 
 **Shared SAP automation foundations, adapted to two reporting needs.**
@@ -79,7 +72,7 @@ flowchart TD
 
 ## 3. From monthly files to analysis
 
-The local PPO archive contains 84 monthly export files across eight sales organizations. Inspected Python/pandas code reads localized SAP exports, normalizes selected columns and European numeric formats, and retains source-file, organization and reporting-period metadata. A Qlik load script consumes the consolidated CSV.
+The retained archive supports the historical extraction footprint across eight countries. Inspected Python/pandas code reads localized SAP exports, normalizes selected columns and European numeric formats, and retains source-file, organization and reporting-period metadata. A Qlik load script consumes the consolidated CSV.
 
 Separate reconciliation code applies country-dependent filters and explores subsets against configured balance targets. Numeric matches help investigate definitions; they do not independently prove that an accounting rule is correct. These downstream artifacts support the PPO case and are not claimed as a verified consignment-to-Qlik deployment.
 
@@ -95,8 +88,10 @@ A separate Selenium experiment targets TM1 Web. It is adjacent work, distinct fr
 | Historical data footprint | Export filename inventory; no contents or continuous-coverage audit. |
 | Downstream preparation | Python and Qlik source inspection; no live reload or accounting validation. |
 
+[Colleague-use and handover evidence](HANDOVER.md) adds the operational perspective. The owner reports that the recurring SAP process went from about two hours to seconds, based on experience of both workflows.
+
 This documentation portfolio presents the engineering pattern and its evolution. A configurable report interface, central run manifest, and strict schema checks would be future enhancements. Original operational scripts and company data are excluded from the showcase.
 
 ## See Also
 
-[Portfolio overview](../README.md) · [[README]]
+[Portfolio overview](../README.md)
