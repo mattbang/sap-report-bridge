@@ -88,7 +88,7 @@ A separate Selenium experiment targets TM1 Web. It is adjacent work, distinct fr
 | Historical data footprint | Export filename inventory; no contents or continuous-coverage audit. |
 | Downstream preparation | Python and Qlik source inspection; no live reload or accounting validation. |
 
-[Colleague-use and handover evidence](HANDOVER.md) adds the operational perspective. The owner reports that the recurring SAP process went from about two hours to seconds, based on experience of both workflows.
+[Colleague-use and handover evidence](HANDOVER.md) adds the operational perspective. The owner reports that about two hours of manual hands-on preparation were replaced by seconds to launch an unattended job. Archived run reports show examples of approximately 14–26 minutes of processing. This separates operator effort from elapsed runtime: output review and exception handling still required attention, and the job did not complete in seconds. The observed runs do not establish a runtime guarantee.
 
 This documentation portfolio presents the engineering pattern and its evolution. A configurable report interface, central run manifest, and strict schema checks would be future enhancements. Original operational scripts and company data are excluded from the showcase.
 
