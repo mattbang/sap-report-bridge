@@ -1,6 +1,6 @@
 # SAP Reporting Automation
 
-**Reduced a recurring reporting task from about two hours to seconds—and supported its handover to a colleague.**
+**Replaced about two hours of manual hands-on work with seconds to launch an unattended job—and supported its handover to a colleague.**
 
 I built Python desktop automation to extract and organise SAP reports when standard reporting feeds did not provide the required detail. Historical extraction supported reporting across **eight countries**; my work also covered launch instructions, scheduling support and troubleshooting for another operator.
 
@@ -8,7 +8,7 @@ I built Python desktop automation to extract and organise SAP reports when stand
 
 ![Conceptual flow from SAP reports through desktop automation to organised reporting inputs](assets/solution-flow.png)
 
-*Documentation case study with conceptual visuals. The timing is my estimate from the original manual and automated workflows; it is not a public-demo benchmark.*
+*Documentation case study with conceptual visuals. The comparison concerns hands-on effort, based on my operating experience. Archived run reports show examples of approximately 14–26 minutes of processing; the job did not finish in seconds. Output review and exception handling still required attention.*
 
 ## From personal automation to colleague use
 
@@ -40,6 +40,6 @@ This is a documentation and visual case study. Original operational scripts, log
 - [Handover guide](docs/HANDOVER.md): colleague use, support and operating guidance.
 - [Visual overview](preview.html): download the repository and open locally; GitHub does not execute the HTML preview.
 
-The evidence supports a faster recurring process and use beyond its author. It does not establish an uptime rate or an exact runtime for every export.
+The evidence supports less hands-on preparation and use beyond its author. The archived processing times are examples, not a runtime guarantee or an uptime measure.
 
 [Matthew Bangle on LinkedIn](https://www.linkedin.com/in/matthew-bangle/) · [Full portfolio](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/work)
